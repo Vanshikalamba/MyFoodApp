@@ -2,6 +2,20 @@ import { render, screen } from "@testing-library/react";
 import Contact from "../components/Contact";
 import "@testing-library/jest-dom";
 describe("Contact Page TCs", () => {
+  beforeAll(() => {
+    //console.log("before all");
+  });
+
+  beforeEach(() => {
+    //console.log("before each");
+  });
+  afterAll(() => {
+    //console.log("after all");
+  });
+  afterEach(() => {
+    //console.log("after each");
+  });
+
   it("should load contact component ", () => {
     render(<Contact />);
     const heading = screen.getByRole("heading");

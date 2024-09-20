@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for components/Header.js</title>
+    <title>Code coverage report for utils/mocdatafortest.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">components</a> Header.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">utils</a> mocdatafortest.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -146,22 +146,24 @@
 <a name='L81'></a><a href='#L81'>81</a>
 <a name='L82'></a><a href='#L82'>82</a>
 <a name='L83'></a><a href='#L83'>83</a>
-<a name='L84'></a><a href='#L84'>84</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -208,7 +210,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -229,89 +230,112 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useState, useContext } from "react";
-import { LOGO_URL, LOGO_URL2 } from "../utils/constants";
-import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
-import { useSelector } from "react-redux";
-&nbsp;
-const Header = () =&gt; {
-  const [btnLogin, setbtnLogin] = useState("Login");
-  const onlineStatus = useOnlineStatus();
-  const { loggedInUser } = useContext(UserContext);
-&nbsp;
-  //subscribing to store
-  const cart = useSelector((store) =&gt; store.cart.items);
-&nbsp;
-  return (
-    &lt;div className="flex justify-between items-center shadow-md bg-purple-400 text-white font-bold"&gt;
-      &lt;div className="logo-container"&gt;
-        &lt;Link to="/"&gt;
-          &lt;img className="m-2 w-[80px]" src={LOGO_URL2}&gt;&lt;/img&gt;
-        &lt;/Link&gt;
-      &lt;/div&gt;
-      &lt;div className="flex items-center"&gt;
-        &lt;ul className="flex p-4 m-4 "&gt;
-          &lt;li className="px-4"&gt;
-            &lt;span&gt;Online Status: {onlineStatus ? "🟢" : <span class="branch-1 cbranch-no" title="branch not covered" >"🔴"}</span>&lt;/span&gt;
-          &lt;/li&gt;
-          &lt;li className="px-4"&gt;
-            &lt;Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              to="/about"
-            &gt;
-              About
-            &lt;/Link&gt;
-          &lt;/li&gt;
-          &lt;li className="px-4"&gt;
-            &lt;Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              to="/contact"
-            &gt;
-              Contact
-            &lt;/Link&gt;
-          &lt;/li&gt;
-          &lt;li className="px-4"&gt;
-            &lt;Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              to="/"
-            &gt;
-              Home
-            &lt;/Link&gt;
-          &lt;/li&gt;
-          &lt;li className="px-4"&gt;
-            &lt;Link
-              style={{ color: "inherit", textDecoration: "inherit" }}
-              to="/grocery"
-            &gt;
-              Grocery
-            &lt;/Link&gt;
-          &lt;/li&gt;
-          &lt;button
-            className="loginbtn px-2 py-1 bg-white text-black rounded-lg"
-            onClick={() =&gt; {
-              btnLogin === "Login"
-                ? setbtnLogin("Logout")
-                : <span class="branch-1 cbranch-no" title="branch not covered" >setbtnLogin("Login");</span>
-            }}
-          &gt;
-            {btnLogin}
-          &lt;/button&gt;
-          {/* &lt;li className="px-4 font-bold"&gt;{loggedInUser}&lt;/li&gt; */}
-          &lt;Link
-            style={{ color: "inherit", textDecoration: "inherit" }}
-            to="/cart"
-          &gt;
-            &lt;li className="px-4 font-bold text-md"&gt;Cart👜({cart.length})&lt;/li&gt;
-          &lt;/Link&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  );
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const resList2 = {
+  info: {
+    id: "594685",
+    name: "Chinese Wok",
+    cloudinaryImageId: "e0839ff574213e6f35b3899ebf1fc597",
+    locality: "Gautam Buddha Nagar",
+    areaName: "Sector 110",
+    costForTwo: "₹250 for two",
+    cuisines: ["Chinese", "Asian", "Tibetan", "Desserts"],
+    avgRating: 4,
+    parentId: "61955",
+    avgRatingString: "4.0",
+    totalRatingsString: "1.1K+",
+    sla: {
+      deliveryTime: 27,
+      lastMileTravel: 0.9,
+      serviceability: "SERVICEABLE",
+      slaString: "25-30 mins",
+      lastMileTravelString: "0.9 km",
+      iconType: "ICON_TYPE_EMPTY",
+    },
+    availability: {
+      nextCloseTime: "2024-09-21 01:00:00",
+      opened: true,
+    },
+    badges: {
+      imageBadges: [
+        {
+          imageId: "Green%20Dot%20Awards/Best%20In%20Veg%20Noodles.png",
+          description: "Delivery!",
+        },
+        {
+          imageId: "Green%20Dot%20Awards/Best%20In%20Veg%20Momos.png",
+          description: "Delivery!",
+        },
+      ],
+    },
+    isOpen: true,
+    type: "F",
+    badgesV2: {
+      entityBadges: {
+        imageBased: {
+          badgeObject: [
+            {
+              attributes: {
+                description: "Delivery!",
+                imageId: "Green%20Dot%20Awards/Best%20In%20Veg%20Noodles.png",
+              },
+            },
+            {
+              attributes: {
+                description: "Delivery!",
+                imageId: "Green%20Dot%20Awards/Best%20In%20Veg%20Momos.png",
+              },
+            },
+          ],
+        },
+        textBased: {},
+        textExtendedBadges: {},
+      },
+    },
+    aggregatedDiscountInfoV3: {
+      header: "ITEMS",
+      subHeader: "AT ₹199",
+    },
+    differentiatedUi: {
+      displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+      differentiatedUiMediaDetails: {
+        mediaType: "ADS_MEDIA_ENUM_IMAGE",
+        lottie: {},
+        video: {},
+      },
+    },
+    reviewsSummary: {},
+    displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    restaurantOfferPresentationInfo: {},
+    externalRatings: {
+      aggregatedRating: {
+        rating: "--",
+      },
+    },
+    ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+  },
+  analytics: {},
+  cta: {
+    link: "https://www.swiggy.com/city/noida-1/chinese-wok-gautam-buddha-nagar-sector-110-rest594685",
+    type: "WEBLINK",
+  },
 };
 &nbsp;
-export default Header;
+export default resList2;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
